@@ -1,0 +1,36 @@
+{
+  "alerting": {
+    "smtp": {
+      "server": "smtp.gmail.com",
+      "port": 587,
+      "username": "your-email@gmail.com",
+      "password": "your-app-password",
+      "from_email": "your-email@gmail.com",
+      "to_email": "security@yourcompany.com"
+    },
+    "slack_webhook": "https://hooks.slack.com/services/YOUR_WEBHOOK",
+    "discord_webhook": "https://discord.com/api/webhooks/YOUR_WEBHOOK",
+    "virustotal_api_key": "YOUR_VIRUSTOTAL_API_KEY",
+    "abuseipdb_api_key": "YOUR_ABUSEIPDB_API_KEY"
+  },
+  "analysis": {
+    "max_workers": 5,
+    "timeout": 10,
+    "check_url_reputation": true,
+    "check_attachments": true
+  },
+  "scoring": {
+    "suspicious_threshold": 5,
+    "malicious_threshold": 8,
+    "weights": {
+      "suspicious_sender": 2,
+      "suspicious_subject": 1,
+      "suspicious_urls": 3,
+      "suspicious_attachments": 3,
+      "spf_failure": 2,
+      "dkim_failure": 2,
+      "dmarc_failure": 2,
+      "known_phishing_domain": 4
+    }
+  }
+}
